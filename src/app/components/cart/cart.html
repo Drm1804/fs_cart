@@ -3,16 +3,16 @@
   <div class="width">
     <div class="b-cart">
       <div layout="row">
-        <div flex="52" class="b-cart-col">
+        <div  class="b-cart-col b-cart-col--big">
           <ul class="b-cart-breadcrumbs">
             <li class="b-cart-breadcrumbs__item" ng-repeat="element in ctrl.steps track by $index ">
-              <a ng-if="element.active" ui-sref-active="active" ui-sref="{{element.state}}">{{element.name}}</a>
-              <span ng-if="!element.active">{{element.name}}</span>
+              <a class="b-cart-breadcrumbs-item" ng-if="element.active" ui-sref-active="active" ui-sref="{{element.state}}">{{element.name}}</a>
+              <span class="b-cart-breadcrumbs-item" ng-if="!element.active">{{element.name}}</span>
             </li>
           </ul>
           <ui-view></ui-view>
         </div>
-        <div flex="48" class="b-cart-col b-cart-grey-col">
+        <div flex="45" class="b-cart-col b-cart-col--small b-cart-col--grey">
           <div layout="row">
             <div flex="70">Order Summary</div>
             <div flex="30"><a href="">edit order</a></div>
@@ -20,7 +20,7 @@
           <table class="b-cart-order-list">
             <tr ng-repeat="item in ctrl.ordeData.ordeData track by item.id">
               <td class="b-cart-order-list__img">
-                <img src="{{item.img}}" alt=""/>
+                <img ng-src="{{item.img}}" alt=""/>
               </td>
               <td class="b-cart-order-list__descr">
                 <div class="b-cart-ord-lst-dsc">

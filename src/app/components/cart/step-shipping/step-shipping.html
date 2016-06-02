@@ -1,16 +1,20 @@
 <div ng-controller="ShippingCartController as ctrl">
 
-  <h1>Shipping Info</h1>
+  <h1 class="b-step-h1">Shipping Info</h1>
 
-  Recipient
+  <h3 class="b-step-h3">Recipient</h3>
 
-  <input placeholder="Full name" type="text"/>
-  <input placeholder="Daytime phone" type="text"/>
-  For delivery question only
+  <input class="b-step-text-input" placeholder="Full name" type="text"/>
+  <input class="b-step-text-input b-step-text-input--dt" placeholder="Daytime phone" type="text"/>
+  <span class="b-step-input-describe">
+    For delivery <br>question only
+  </span>
+  <div class="b-step-bord"></div>
 
-  Address
-  <input placeholder="Street Address" type="text"/>
-  <input placeholder="Apt, Suite< Bldg, Gate Code (optional)" type="text"/>
+
+  <h3 class="b-step-h3">Address</h3>
+  <input class="b-step-text-input" placeholder="Street Address" type="text"/>
+  <input class="b-step-text-input" placeholder="Apt, Suite< Bldg, Gate Code (optional)" type="text"/>
 
 
   <input placeholder="City" type="text"/>
