@@ -52,6 +52,9 @@
   width: 28%;
   margin-left: 4%;
 }
+.b-step-text-input--min{
+  width: 67%;
+}
 .b-step-input-describe{
   font-size: 1.22rem;
   display: inline-block;
@@ -89,7 +92,10 @@
   border-radius: 5px;
   border: 1px solid #381166;
 }
-
+.b-step-row__col{
+  display: inline-block;
+  width: 38%;
+}
 .b-cart-breadcrumbs-item--active{
   color: red;
 }
