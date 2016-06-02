@@ -1,0 +1,32 @@
+{
+  "ordeData": [
+    {
+      "id":"00001",
+      "img":"assets/img/00001.jpg",
+      "title":"The Chelsea Boot",
+      "details":"Black",
+      "quantity":"1",
+      "price":"235"
+    },
+    {
+      "id":"00002",
+      "img":"assets/img/00002.jpg",
+      "title":"The Twill Snap Backpack",
+      "details":"Reverse Denim + Brown leather",
+      "quantity":"1",
+      "price":"65"
+    },
+    {
+      "id":"00003",
+      "img":"assets/img/00003.jpg",
+      "title":"The Twill Zip Tote",
+      "details":"Reverse Denim + Black leather",
+      "quantity":"1",
+      "price":"48"
+    }
+  ],
+  "subtotal":"398",
+  "shipping":"Free",
+  "taxes":"12.12",
+  "total":"410.12"
+}

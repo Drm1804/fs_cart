@@ -19,10 +19,25 @@
           stepsBreadcrumbsData.push(step)
         }
       },
-      $get: function(){
+      $get: function($q, $http){
         return{
           returnStepsBreadcrumbsData: function(){
             return stepsBreadcrumbsData;
+          },
+          returnOrderList: function(){
+            var dfd = $q.defer();
+
+            $http.get('order.json')
+              .then(
+              function(resp){
+                dfd.resolve(resp.data);
+              },
+              function(resp){
+                dfd.reject(resp);
+              }
+            );
+
+            return dfd.promise;
           }
         }
 

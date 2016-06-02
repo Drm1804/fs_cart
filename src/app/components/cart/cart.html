@@ -17,41 +17,39 @@
             <div flex="30"><a href="">edit order</a></div>
           </div>
           <table class="b-cart-order-list">
-            <tr>
+            <tr ng-repeat="item in ctrl.ordeData.ordeData track by item.id">
               <td class="b-cart-order-list__img">
-                <img src="assets/img/00001.jpg" alt=""/>
+                <img src="{{item.img}}" alt=""/>
               </td>
               <td class="b-cart-order-list__descr">
                 <div class="b-cart-ord-lst-dsc">
-                  <span class="db b-cart-ord-lst-dsc__head">The Chelsea Boot</span>
-                  <span class="db b-cart-ord-lst-dsc__text">Black</span>
-                  <span class="db b-cart-ord-lst-dsc__text">Quantity: 1</span>
+                  <span class="db b-cart-ord-lst-dsc__head">{{item.title}}</span>
+                  <span class="db b-cart-ord-lst-dsc__text">{{item.details}}</span>
+                  <span class="db b-cart-ord-lst-dsc__text">Quantity: {{item.quantity}}</span>
                 </div>
               </td>
-              <td class="b-cart-order-list__price">
-                $235
-              </td>
+              <td class="b-cart-order-list__price">{{item.price}}</td>
             </tr>
           </table>
 
           <table class="b-cart-price-list">
             <tr>
               <td class="b-cart-o-list__text">Subtotal</td>
-              <td class="b-cart-o-list__text">$398</td>
+              <td class="b-cart-o-list__text">${{ctrl.ordeData.subtotal}}</td>
             </tr>
             <tr>
               <td class="b-cart-o-list__text">Shipping</td>
-              <td class="b-cart-o-list__text">Free</td>
+              <td class="b-cart-o-list__text">{{ctrl.ordeData.shipping}}</td>
             </tr>
             <tr>
               <td class="b-cart-o-list__text">Taxes</td>
-              <td class="b-cart-o-list__text">$12.12</td>
+              <td class="b-cart-o-list__text">${{ctrl.ordeData.taxes}}</td>
             </tr>
           </table>
           <table class="b-cart-total-price-list">
             <tr>
               <td class="b-cart-o-list__text">Total</td>
-              <td class="b-cart-o-list__text">$410.12</td>
+              <td class="b-cart-o-list__text">${{ctrl.ordeData.total}}</td>
             </tr>
           </table>
         </div>
