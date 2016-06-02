@@ -1,4 +1,4 @@
-<div ng-controller="PaymentCartController as ctrl">
+<div ng-controller="BillingCartController as ctrl">
   <h1>Billing Information</h1>
 
   Billing Contact
@@ -18,7 +18,7 @@
 
   <input placeholder="ZIP" type="text"/>
 
-  <md-button class="md-raised">Button</md-button>
+  <md-button ng-click="ctrl.goToNextStep()" class="md-raised">Button</md-button>
 
 </div>
 

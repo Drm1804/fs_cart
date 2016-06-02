@@ -10,7 +10,7 @@
 
   function config($urlRouterProvider, $stateProvider){
 
-    $urlRouterProvider.otherwise('/cart');
+    $urlRouterProvider.otherwise('/cart/shipping');
 
     $stateProvider
       .state('auth', {

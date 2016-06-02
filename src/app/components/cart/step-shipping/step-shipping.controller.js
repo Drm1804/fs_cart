@@ -1,26 +1,24 @@
 (function () {
-    'use strict';
+  'use strict';
 
   angular.module('fs')
     .controller('ShippingCartController', ShippingCartController);
 
   ShippingCartController.$inject = ['$state', '$cart', '$scope'];
 
-  function ShippingCartController($state, $cart, $scope){
-
+  function ShippingCartController($state, $cart, $scope) {
 
 
     var vm = this;
-    vm.thisController = $state.current.name;
-    vm.nextController = null;
+    vm.thisControllerName = 'shipping';
 
     // Данные выведены сюда, чтобы проще ориентироваться
     vm.data = {
-      recipient:{
+      recipient: {
         fullName: null,
         daytimePhone: null
       },
-      address:{
+      address: {
         street: null,
         addressOther: null,
         city: null,
@@ -29,31 +27,34 @@
       }
     };
 
+
+    vm.getMyData = getMyData;
     vm.goToNextStep = goToNextStep;
     vm.run = run;
     vm.run();
 
-
     function goToNextStep(){
-      $cart.setInfoFromUser(vm.thisController, vm.data)
-      .then(function(resp){
-
-        // Если даныне были отправлены в первый раз
-        if(resp.first){
-          $scope.$emit('cart:next-new-step')
-        }else{
-
-          // Если данные отправлены повторно
-          $scope.$emit('cart:next-step')
-        }
+      $cart.setStepsData(vm.thisControllerName, vm.data)
+      .then(function(){
+        $state.go('auth.cart.billing');
       })
     }
 
-    function run(){
+
+    // Запрашиваем у провайдера данные о заполненных пользователем полях
+    function getMyData() {
+      $cart.getStepsData(vm.thisControllerName)
+        .then(function (resp) {
+          vm.data = resp || vm.data;
+        })
     }
 
+    function run() {
+      vm.getMyData();
+      // Говорим, что теперь этот этейт активен
+      $scope.$emit('cart:change-active-state', vm.thisControllerName);
 
-
+    }
 
 
   }

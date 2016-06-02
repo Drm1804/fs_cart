@@ -11,11 +11,5 @@
         url: '/payment',
         templateUrl: 'app/components/cart/step-payment/step-payment.html'
       });
-    $cartProvider
-      .registrationStepBreadcrumbs({
-        title:'Payment',
-        state:'auth.cart.payment',
-        order:'2'
-      })
   }
 })();

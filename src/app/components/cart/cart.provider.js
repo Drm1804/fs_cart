@@ -5,20 +5,14 @@
     .provider('$cart', $cart);
 
   function $cart() {
-    var stepsData = [];
+    var data = {
+      shipping: null,
+      billing: null,
+      payment: null
+    };
+
 
     return {
-      registrationStepBreadcrumbs: function (step) {
-        var newElementStep = {
-          'title': 'item',
-          'state': '',
-          'order': Number.MAX_SAFE_INTEGER
-        };
-        if (step instanceof Object) {
-          angular.extend(newElementStep, step);
-          stepsData.push(step)
-        }
-      },
       $get: function ($q, $http, $timeout) {
         return {
           returnStepsBreadcrumbsData: function () {
@@ -40,49 +34,55 @@
 
             return dfd.promise;
           },
-          setInfoFromUser: function (state, data) {
-            // Я сделал этот метод асинхронным, поскольку, возможно, что информация о каждом шаге будет отправляться на сервер
+
+          // Методы setStepsData и getStepsData я сделал асинхронными, чтобы в дальнейшем реализовать хранение промежуточных значений на сервере
+          setStepsData: function (type, _data_) {
+
             var dfd = $q.defer();
 
-            // Переменная с ответом конроллеру
-            var resp = {
-              first: true
-            };
-
-
-            for (var i in stepsData) {
-              if (state === stepsData[i].state) {
-
-                // Проверям, были ли данные у этого шага, если были, то в ответе сообщим об этом конроллеру
-                if(stepsData[i].data){
-                  resp.first = false
-                }
-                stepsData[i].data = data;
-                $timeout(function () {
-                  dfd.resolve(resp)
-                });
-                break;
+            $timeout(function() {
+              switch (type) {
+                case('shipping'):
+                  data.shipping = _data_;
+                  break;
+                case('billing'):
+                  data.billing = _data_;
+                  break;
+                case('payment'):
+                  data.payment = _data_;
+                  break;
               }
-            }
+              dfd.resolve();
+            })
 
             return dfd.promise;
 
           },
-          getInfoFromUser: function (type) {
-            switch (type) {
-              case('shipping'):
-                return data.shipping;
-                break;
-              case('billing'):
-                return data.billing;
-                break;
-              case('payment'):
-                return data.payment;
-                break;
-              default:
-                return data;
-                break;
-            }
+          getStepsData: function (type) {
+            var dfd = $q.defer();
+
+            var resp = null;
+            $timeout(function(){
+              switch (type) {
+                case('shipping'):
+                  resp =  data.shipping;
+                  break;
+                case('billing'):
+                  resp =  data.billing;
+                  break;
+                case('payment'):
+                  resp =  data.payment;
+                  break;
+                default:
+                  resp =  data;
+                  break;
+              }
+
+              dfd.resolve(resp);
+            });
+
+
+            return dfd.promise;
           }
         }
       }

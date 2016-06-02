@@ -11,12 +11,6 @@
         url: '/billing',
         templateUrl: 'app/components/cart/step-billing/step-billing.html'
       });
-    $cartProvider
-      .registrationStepBreadcrumbs({
-        title:'Billing',
-        state:'auth.cart.billing',
-        step:'1'
-      })
 
 
   }
