@@ -1,47 +1,66 @@
 (function () {
-    'use strict';
+  'use strict';
 
   angular.module('fs')
     .provider('$cart', $cart);
 
-  function $cart(){
+  function $cart() {
 
-    var stepsBreadcrumbsData = [];
-    return{
-      registrationStepBreadcrumbs: function(step){
-        var newElementStep = {
-          'title': 'item',
-          'state': '',
-          'order': Number.MAX_SAFE_INTEGER
-        };
-        if (step instanceof Object) {
-          angular.extend(newElementStep, step);
-          stepsBreadcrumbsData.push(step)
-        }
-      },
-      $get: function($q, $http){
-        return{
-          returnStepsBreadcrumbsData: function(){
-            return stepsBreadcrumbsData;
-          },
-          returnOrderList: function(){
+    return {
+
+      $get: function ($q, $http, $timeout) {
+        return {
+          setInfoFromUser: function (type, data) {
+            // Я сделал этот метод асинхронным, поскольку, возможно, что информация о каждом шаге будет отправляться на сервер
             var dfd = $q.defer();
 
-            $http.get('order.json')
-              .then(
-              function(resp){
-                dfd.resolve(resp.data);
-              },
-              function(resp){
-                dfd.reject(resp);
-              }
-            );
+
+            switch (type) {
+              case('shipping'):
+                data.shipping = data;
+                $timeout(function () {
+                  dfd.resolve()
+                });
+                break;
+              case('billing'):
+                data.billing = data;
+                $timeout(function () {
+                  dfd.resolve()
+                });
+                break;
+              case('payment'):
+                data.payment = data;
+                $timeout(function () {
+                  dfd.resolve()
+                });
+                break;
+              default:
+                $timeout(function () {
+                  dfd.reject()
+                });
+                break;
+            }
 
             return dfd.promise;
+
+          },
+          getInfoFromUser: function (type) {
+            switch (type) {
+              case('shipping'):
+                return data.shipping;
+                break;
+              case('billing'):
+                return data.billing;
+                break;
+              case('payment'):
+                return data.payment;
+                break;
+              default:
+                return data;
+                break;
+            }
           }
         }
-
-
       }
     }
   }

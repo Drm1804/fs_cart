@@ -12,11 +12,5 @@
         templateUrl: 'app/components/cart/step-shipping/step-shipping.html'
       });
 
-    $cartProvider
-      .registrationStepBreadcrumbs({
-        title:'Shipping',
-        state:'auth.cart.shipping',
-        order:'5'
-      })
   }
 })();

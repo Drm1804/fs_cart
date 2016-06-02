@@ -12,11 +12,5 @@
         templateUrl: 'app/components/cart/step-billing/step-billing.html'
       });
 
-    $cartProvider
-      .registrationStepBreadcrumbs({
-        title:'Billing',
-        state:'auth.cart.billing',
-        order:'10'
-      })
   }
 })();

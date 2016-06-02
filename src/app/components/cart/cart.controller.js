@@ -5,36 +5,29 @@
     .controller('CartController', cartController);
 
 
-  cartController.$inject = ['$cart'];
+  cartController.$inject = ['$cart', '$state'];
 
-  function cartController($cart) {
+  function cartController($cart, $state) {
 
     var vm = this;
-    vm.ordeData = null;
+    vm.orderData = {
+      shipping: null,
+      billing: null,
+      payment: null
+    };
+
     vm.stepsBreadcrumbs = null;
-    vm.getStepsBreadcrumbs = getStepsBreadcrumbs;
-    vm.getOrderList = getOrderList;
+    vm.goTo = goTo;
     vm.run = run;
     vm.run();
 
 
+    function goTo(state){
+      $state.go(state)
 
-
-
-
-    function getOrderList(){
-      $cart.returnOrderList()
-        .then(function(resp){
-          vm.ordeData = resp;
-        });
-    }
-
-    function getStepsBreadcrumbs(){
-      vm.stepsBreadcrumbs = $cart.returnStepsBreadcrumbsData();
     }
 
     function run(){
-      vm.getStepsBreadcrumbs();
       vm.getOrderList();
     }
   }
