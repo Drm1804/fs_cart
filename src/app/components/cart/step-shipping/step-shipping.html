@@ -14,18 +14,18 @@
 
   <h3 class="b-step-h3">Address</h3>
   <input class="b-step-text-input" placeholder="Street Address" type="text"/>
-  <input class="b-step-text-input" placeholder="Apt, Suite< Bldg, Gate Code (optional)" type="text"/>
+  <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
 
 
-  <input placeholder="City" type="text"/>
+  <input class="b-step-text-input" placeholder="City" type="text"/>
 
 
-  <input placeholder="Country" type="text"/>
+  <input class="b-step-text-input b-step-text-input--dt"  placeholder="Country" type="text"/>
 
-  <input placeholder="ZIP" type="text"/>
+  <input class="b-step-text-input b-step-text-input--zip"  placeholder="ZIP" type="text"/>
 
 
-    <md-button ng-click="ctrl.goToNextStep()" class="md-raised">Button</md-button>
+    <md-button ng-click="ctrl.goToNextStep()" class="md-raised b-step-btn">Continue</md-button>
 
 
 </div>
