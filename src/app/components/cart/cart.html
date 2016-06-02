@@ -1,0 +1,69 @@
+<div ng-include="'app/components/navbar/navbar.html'"></div>
+<div ng-controller="CartController as ctrl">
+  <div class="width">
+    <div class="b-cart">
+      <div layout="row">
+        <div flex="52" class="b-cart-col">
+          <ul class="b-cart-breadcrumbs">
+            <li class="b-cart-breadcrumbs__item">
+              <a href="">Shipping</a>
+            </li>
+            <li class="b-cart-breadcrumbs__item">
+              <a href="">Billing</a>
+            </li>
+            <li class="b-cart-breadcrumbs__item">
+              <a href="">Payment</a>
+            </li>
+          </ul>
+          <ui-view></ui-view>
+        </div>
+        <div flex="48" class="b-cart-col b-cart-grey-col">
+          <div layout="row">
+            <div flex="70">Order Summary</div>
+            <div flex="30"><a href="">edit order</a></div>
+          </div>
+          <table class="b-cart-order-list">
+            <tr>
+              <td class="b-cart-order-list__img">
+                <img src="assets/img/00001.jpg" alt=""/>
+              </td>
+              <td class="b-cart-order-list__descr">
+                <div class="b-cart-ord-lst-dsc">
+                  <span class="db b-cart-ord-lst-dsc__head">The Chelsea Boot</span>
+                  <span class="db b-cart-ord-lst-dsc__text">Black</span>
+                  <span class="db b-cart-ord-lst-dsc__text">Quantity: 1</span>
+                </div>
+              </td>
+              <td class="b-cart-order-list__price">
+                $235
+              </td>
+            </tr>
+          </table>
+
+          <table class="b-cart-price-list">
+            <tr>
+              <td class="b-cart-o-list__text">Subtotal</td>
+              <td class="b-cart-o-list__text">$398</td>
+            </tr>
+            <tr>
+              <td class="b-cart-o-list__text">Shipping</td>
+              <td class="b-cart-o-list__text">Free</td>
+            </tr>
+            <tr>
+              <td class="b-cart-o-list__text">Taxes</td>
+              <td class="b-cart-o-list__text">$12.12</td>
+            </tr>
+          </table>
+          <table class="b-cart-total-price-list">
+            <tr>
+              <td class="b-cart-o-list__text">Total</td>
+              <td class="b-cart-o-list__text">$410.12</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
