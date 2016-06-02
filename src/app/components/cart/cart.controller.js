@@ -5,14 +5,31 @@
     .controller('CartController', cartController);
 
 
-  cartController.$inject = ['$mdToast'];
+  cartController.$inject = ['$cart'];
 
-  function cartController($mdToast) {
+  function cartController($cart) {
 
     var vm = this;
-    vm.urlInput = 'test.html';
-    vm.arrMeta = [];
+    vm.stepsBreadcrumbs = null;
+    vm.getStepsBreadcrumbs = getStepsBreadcrumbs;
+    vm.run = run;
+    vm.run();
 
 
+
+
+
+
+
+    function getStepsBreadcrumbs(){
+      vm.stepsBreadcrumbs = $cart.returnStepsBreadcrumbsData();
+      console.log( vm.stepsBreadcrumbs)
+
+
+    }
+
+    function run(){
+      vm.getStepsBreadcrumbs();
+    }
   }
 })();

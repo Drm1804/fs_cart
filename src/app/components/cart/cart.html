@@ -5,14 +5,8 @@
       <div layout="row">
         <div flex="52" class="b-cart-col">
           <ul class="b-cart-breadcrumbs">
-            <li class="b-cart-breadcrumbs__item">
-              <a href="">Shipping</a>
-            </li>
-            <li class="b-cart-breadcrumbs__item">
-              <a href="">Billing</a>
-            </li>
-            <li class="b-cart-breadcrumbs__item">
-              <a href="">Payment</a>
+            <li class="b-cart-breadcrumbs__item" ng-repeat="element in ctrl.stepsBreadcrumbs track by $index">
+              <a ui-sref="{{element.state}}">{{element.title}}</a>
             </li>
           </ul>
           <ui-view></ui-view>
