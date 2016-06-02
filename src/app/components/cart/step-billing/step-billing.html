@@ -1,24 +1,18 @@
 <div ng-controller="BillingCartController as ctrl">
-  <h1>Billing Information</h1>
+  <h1 class="b-step-h1">Billing Information</h1>
+  <h3 class="b-step-h3">Billing Contact</h3>
 
-  Billing Contact
-  <input placeholder="Full name" type="text"/>
-  <input placeholder="Daytime phone" type="text"/>
+  <input class="b-step-text-input" placeholder="Full name" type="text"/>
+  <input class="b-step-text-input" placeholder="Email address" type="text"/>
+  <div class="b-step-bord"></div>
+  <h3 class="b-step-h3">Billing Address</h3>
+  <input class="b-step-text-input" placeholder="Street Address" type="text"/>
+  <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
+  <input class="b-step-text-input" placeholder="City" type="text"/>
+  <input class="b-step-text-input b-step-text-input--dt"  placeholder="Country" type="text"/>
+  <input class="b-step-text-input b-step-text-input--zip"  placeholder="ZIP" type="text"/>
+  <md-button ng-click="ctrl.goToNextStep()" class="md-raised b-step-btn">Continue</md-button>
 
-
-  Billing Address
-  <input placeholder="Street Address" type="text"/>
-  <input placeholder="Apt, Suite< Bldg, Gate Code (optional)" type="text"/>
-
-
-  <input placeholder="City" type="text"/>
-
-
-  <input placeholder="Country" type="text"/>
-
-  <input placeholder="ZIP" type="text"/>
-
-  <md-button ng-click="ctrl.goToNextStep()" class="md-raised">Button</md-button>
 
 </div>
 
