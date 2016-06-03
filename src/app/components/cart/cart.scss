@@ -18,11 +18,15 @@
   max-width: 41%;
   max-height: 100%;
   box-sizing: border-box;
+  padding: 35px 1.8%;
 }
 .b-cart-col--grey{
   background: #f2f3f6;
 }
-
+.b-cart-order-head{
+  color: #4b1094;
+  font-size: 1.5rem;
+}
 .b-step-h1{
   color: #470a91;
   font-size: 2.4rem;
