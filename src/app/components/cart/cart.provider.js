@@ -15,10 +15,6 @@
     return {
       $get: function ($q, $http, $timeout) {
         return {
-          returnStepsBreadcrumbsData: function () {
-            return stepsData;
-          },
-
           returnOrderList: function () {
             var dfd = $q.defer();
 
@@ -53,7 +49,7 @@
                   break;
               }
               dfd.resolve();
-            })
+            });
 
             return dfd.promise;
 

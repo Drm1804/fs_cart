@@ -5,9 +5,9 @@
     .controller('CartController', cartController);
 
 
-  cartController.$inject = ['$cart', '$state', '$scope'];
+  cartController.$inject = ['$cart', '$scope'];
 
-  function cartController($cart, $state, $scope) {
+  function cartController($cart, $scope) {
 
     var vm = this;
     vm.orderData = {};
@@ -51,6 +51,7 @@
       $cart.returnOrderList()
         .then(function (resp) {
           vm.ordeData = resp;
+          $scope.$emit('cart:change',resp);
         });
     }
 
@@ -63,6 +64,10 @@
         }
       }
     }
+
+    setInterval(function(){
+      vm.getOrderList();
+    }, 500)
 
     function run() {
 

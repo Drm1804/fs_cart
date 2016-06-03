@@ -1,4 +1,4 @@
-<header>
+<header ng-controller="NavbarController as ctrl">
   <div class="width">
     <div layout="row">
       <div flex="90">
@@ -9,7 +9,7 @@
         <div class="b-navbar-cart">
           <span class="b-navbar-cart__text">cart</span>
           <span class="b-navbar-cart__img">
-            <span class="b-navbar-cart-sum">3</span>
+            <span ng-if="ctrl.ordeData.ordeData.length" class="b-navbar-cart-sum">{{ctrl.ordeData.ordeData.length}}</span>
           </span>
         </div>
 
