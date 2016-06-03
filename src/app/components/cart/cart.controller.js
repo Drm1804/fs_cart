@@ -15,17 +15,26 @@
       {
         name: 'shipping',
         active: true,
+        show: true,
         state: 'auth.cart.shipping'
       },
       {
         name: 'billing',
         active: false,
+        show: true,
         state: 'auth.cart.billing'
       },
       {
         name: 'payment',
         active: false,
+        show: true,
         state: 'auth.cart.payment'
+      },
+      {
+        name: 'success',
+        active: false,
+        show: false,
+        state: 'auth.cart.result'
       }
     ];
 

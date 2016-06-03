@@ -5,7 +5,7 @@
       <div layout="row">
         <div  class="b-cart-col b-cart-col--big">
           <ul class="b-cart-breadcrumbs">
-            <li class="b-cart-breadcrumbs__item" ng-repeat="element in ctrl.steps track by $index ">
+            <li class="b-cart-breadcrumbs__item" ng-repeat="element in ctrl.steps track by $index " ng-if="element.show">
               <a class="b-cart-breadcrumbs-item" ng-if="element.active" ui-sref-active="active" ui-sref="{{element.state}}">{{element.name}}</a>
               <span class="b-cart-breadcrumbs-item" ng-if="!element.active">{{element.name}}</span>
             </li>

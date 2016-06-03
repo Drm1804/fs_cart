@@ -5,9 +5,9 @@
     .controller('PaymentCartController', PaymentCartController);
 
 
-  PaymentCartController.$inject = ['$scope', '$cart'];
+  PaymentCartController.$inject = ['$scope', '$cart', '$state'];
 
-  function PaymentCartController($scope, $cart){
+  function PaymentCartController($scope, $cart, $state){
     var vm = this;
     vm.thisControllerName = 'payment';
 
@@ -26,6 +26,7 @@
       }
     };
     vm.getMyData = getMyData;
+    vm.goToNextStep = goToNextStep;
     vm.run = run;
     vm.run();
 
@@ -38,6 +39,13 @@
         });
 
       // На этом момоенте можно проверить, если информация о введенных данных и отправить пользователя на послеюнюю заполненную страницу
+    }
+
+    function goToNextStep(){
+      $cart.setStepsData(vm.thisControllerName, vm.data)
+        .then(function(){
+          $state.go('auth.cart.result');
+        })
     }
 
     function run() {
