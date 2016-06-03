@@ -1,30 +1,35 @@
 <div ng-controller="PaymentCartController as ctrl">
 
-  <h1 class="b-step-h1">Payment</h1>
-  This is a secure 128-bit SSL encrypted payment
+  <h1 class="b-step-h1 b-step-h1--payment">Payment</h1>
+  <div class="b-step-secur">
+    <span class="b-step-secur__img"></span>
+    <span class="b-step-secur__text">This is a secure 128-bit SSL encrypted payment</span>
 
-  <h3 class="b-step-h3">Cardholder Name</h3>
+  </div>
+
+
+  <h3 class="b-step-h3 b-step-h3--payment">Cardholder Name</h3>
 
   <input class="b-step-text-input" placeholder="Name as it appears on your card" type="text"/>
 
-  <h3 class="b-step-h3">Card Number</h3>
+  <h3 class="b-step-h3 b-step-h3--payment">Card Number</h3>
 
   <input class="b-step-text-input" placeholder="XXXX XXXX XXXX XXXX XXXX" type="text"/>
 
   <div class="b-step-row">
     <div class="b-step-row__col">
-      <h3 class="b-step-h3">Expire Date</h3>
+      <h3 class="b-step-h3 b-step-h3--payment">Expire Date</h3>
       <input class="b-step-text-input b-step-text-input--min" placeholder="MM / YY" type="text"/>
     </div>
     <div class="b-step-row__col">
-      <h3 class="b-step-h3">Security Code</h3>
+      <h3 class="b-step-h3 b-step-h3--payment">Security Code</h3>
       <input class="b-step-text-input b-step-text-input--min" placeholder="" type="text"/>
     </div>
   </div>
 
 
 
-  <md-button ng-click="ctrl.goToNextStep()" class="md-raised b-step-btn">Play Securely</md-button>
+  <md-button cl ng-click="ctrl.goToNextStep()" class="md-raised b-step-btn b-step-btn--payment">Play Securely</md-button>
 
 
 </div>

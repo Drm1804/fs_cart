@@ -28,11 +28,17 @@
   font-size: 2.4rem;
   margin: 34px 0 30px;
 }
+.b-step-h1--payment{
+  margin: 34px 0 20px;
+}
 .b-step-h3{
   color: #470a91;
   font-size: 1.5rem;
   line-height: 1.2rem;
   margin: 0;
+}
+.b-step-h3--payment{
+  margin-top: 25px;
 }
 .b-step-bord{
   height:35px;
@@ -98,4 +104,23 @@
 }
 .b-cart-breadcrumbs-item--active{
   color: red;
+}
+.b-step-secur{
+  margin: 0 0 35px 0;
+}
+
+.b-step-secur__img{
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  background: url('../assets/img/secur.jpg') 50% 50% no-repeat ;
+}
+.b-step-secur__text{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.27rem;
+}
+.b-step-btn--payment{
+  margin-top: 30px;
 }
