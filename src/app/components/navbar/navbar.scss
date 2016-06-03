@@ -1,7 +1,50 @@
+
 header{
   background: #fff;
   border-bottom: 2px solid #eec4dc;
+  padding: 13px 0;
+}
+.b-navbar-logo{
+  width: 40px;
+  background: url(../assets/img/logo.jpg) 50% 50% no-repeat;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .b-navbar-h1{
-
+  display: inline-block;
+  vertical-align: middle;
+  color: #733baa;
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-left: 10px;
+}
+.b-navbar-cart{
+  text-align: right;
+}
+.b-navbar-cart__text{
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 5px;
+  color: #cb6cc5;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.b-navbar-cart__img{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: bottom;
+  background: url('../assets/img/cart.jpg') 50% 50% no-repeat;
+  position: relative;
+}
+.b-navbar-cart-sum{
+  background: #db1e73;
+  border-radius: 50%;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: .8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
