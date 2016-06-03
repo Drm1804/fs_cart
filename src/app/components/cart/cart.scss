@@ -74,7 +74,26 @@
 }
 .b-cart-breadcrumbs__item{
   display: inline-block;
+  position: relative;
+  padding-right: 50px;
 
+}
+
+.b-cart-breadcrumbs__item:after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: -4px;
+  right: 0;
+  vertical-align: middle;
+  width: 18px;
+  height: 32px;
+  margin-bottom: 4px;
+  padding: 0 15px;
+  background: url('../assets/img/next-arr.jpg') 50% 50% no-repeat;
+}
+.b-cart-breadcrumbs__item:last-child:after{
+  display: none;
 
 }
 .b-cart-breadcrumbs-item{
