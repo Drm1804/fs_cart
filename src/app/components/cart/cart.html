@@ -13,12 +13,12 @@
           <ui-view></ui-view>
         </div>
         <div flex="45" class="b-cart-col b-cart-col--small b-cart-col--grey">
-          <div layout="row">
+          <div layout="row" class="b-cart-head-box">
             <div flex="70"><span class="b-cart-order-head">Order Summary</span></div>
-            <div flex="30"><a href="">edit order</a></div>
+            <div flex="30"><a href="" class="b-cart-edit-order">edit order</a></div>
           </div>
           <table class="b-cart-order-list">
-            <tr ng-repeat="item in ctrl.ordeData.ordeData track by item.id">
+            <tr ng-repeat="item in ctrl.ordeData.ordeData track by item.id" class="b-cart-order-list-item">
               <td class="b-cart-order-list__img">
                 <img ng-src="{{item.img}}" alt=""/>
               </td>
@@ -29,28 +29,29 @@
                   <span class="db b-cart-ord-lst-dsc__text">Quantity: {{item.quantity}}</span>
                 </div>
               </td>
-              <td class="b-cart-order-list__price">{{item.price}}</td>
+              <td class="b-cart-order-list__price">${{item.price}}</td>
             </tr>
           </table>
 
           <table class="b-cart-price-list">
             <tr>
               <td class="b-cart-o-list__text">Subtotal</td>
-              <td class="b-cart-o-list__text">${{ctrl.ordeData.subtotal}}</td>
+              <td class="b-cart-o-list__text b-cart-o-list__text--price">${{ctrl.ordeData.subtotal}}</td>
             </tr>
             <tr>
               <td class="b-cart-o-list__text">Shipping</td>
-              <td class="b-cart-o-list__text">{{ctrl.ordeData.shipping}}</td>
+              <td class="b-cart-o-list__text b-cart-o-list__text--price">{{ctrl.ordeData.shipping}}</td>
             </tr>
             <tr>
               <td class="b-cart-o-list__text">Taxes</td>
-              <td class="b-cart-o-list__text">${{ctrl.ordeData.taxes}}</td>
+              <td class="b-cart-o-list__text b-cart-o-list__text--price">${{ctrl.ordeData.taxes}}</td>
             </tr>
           </table>
+          <div class="b-cart-line-between-table"></div>
           <table class="b-cart-total-price-list">
             <tr>
-              <td class="b-cart-o-list__text">Total</td>
-              <td class="b-cart-o-list__text">${{ctrl.ordeData.total}}</td>
+              <td class="b-cart-tp-list__text">Total</td>
+              <td class="b-cart-tp-list__text b-cart-o-list__text--price">${{ctrl.ordeData.total}}</td>
             </tr>
           </table>
         </div>
