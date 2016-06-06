@@ -37,6 +37,8 @@
 
     <input class="b-step-text-input b-step-text-input--zip" placeholder="ZIP" type="text"/>
 
+    <span>{{coords | json}}</span>
+
 
     <md-button ng-click="ctrl.goToNextStep(shippingForm)" class="md-raised b-step-btn">
       Continue

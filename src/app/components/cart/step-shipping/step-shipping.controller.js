@@ -4,10 +4,15 @@
   angular.module('fs')
     .controller('ShippingCartController', ShippingCartController);
 
-  ShippingCartController.$inject = ['$state', '$cart', '$scope'];
+  ShippingCartController.$inject = ['$state', '$cart', '$scope', 'geolocation'];
 
-  function ShippingCartController($state, $cart, $scope) {
+  function ShippingCartController($state, $cart, $scope, geolocation) {
 
+    geolocation.getLocation().then(function(data){
+      $scope.coords = {lat:data.coords.latitude, long:data.coords.longitude};
+    });
+
+    // console.log($window.navigator.geolocation.getCurrentPosition(position))
 
     var vm = this;
     vm.showTooltip = false;
