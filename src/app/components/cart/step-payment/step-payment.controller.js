@@ -5,27 +5,20 @@
     .controller('PaymentCartController', PaymentCartController);
 
 
-  PaymentCartController.$inject = ['$scope', '$cart', '$state'];
+  PaymentCartController.$inject = ['$scope', '$cart', '$state', 'cardValidator'];
 
-  function PaymentCartController($scope, $cart, $state){
+  function PaymentCartController($scope, $cart, $state, cardValidator){
     var vm = this;
     vm.thisControllerName = 'payment';
 
+
     // Данные выведены сюда, чтобы проще ориентироваться
     vm.data = {
-      recipient: {
-        fullName: null,
-        daytimePhone: null
-      },
-      address: {
-        street: null,
-        addressOther: null,
-        city: null,
-        country: null,
-        zip: null
-      }
+      card: null,
+      cardUrlLogo: null
     };
     vm.getMyData = getMyData;
+    vm.changeCard = changeCard;
     vm.goToNextStep = goToNextStep;
     vm.run = run;
     vm.run();
@@ -46,6 +39,11 @@
         .then(function(){
           $state.go('auth.cart.result');
         })
+    }
+
+    function changeCard(){
+      vm.data.cardUrlLogo = cardValidator.returnLogoCard(vm.data.card);
+      console.log(vm.data.cardUrlLogo);
     }
 
     function run() {

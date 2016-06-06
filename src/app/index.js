@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('fs', ['ui.router', 'ngMaterial', 'credit-cards'])
+  angular.module('fs', ['ui.router', 'ngMaterial'])
     .config(config);
 
 

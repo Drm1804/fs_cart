@@ -14,7 +14,10 @@
 
   <h3 class="b-step-h3 b-step-h3--payment">Card Number</h3>
 
-  <input class="b-step-text-input" placeholder="XXXX XXXX XXXX XXXX XXXX" type="text"/>
+  <div class="b-step__input">
+    <input class="b-step-text-input" placeholder="XXXX XXXX XXXX XXXX XXXX" ng-model="ctrl.data.card" ng-change="ctrl.changeCard()"  type="text"/>
+    <img class="b-card-ctype-img" ng-show="ctrl.data.cardUrlLogo" ng-src="{{ctrl.data.cardUrlLogo }}" alt="">
+  </div>
 
   <div class="b-step-row">
     <div class="b-step-row__col">
