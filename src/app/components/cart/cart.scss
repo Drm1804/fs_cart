@@ -22,6 +22,15 @@
 }
 .b-cart-col--grey{
   background: #f2f3f6;
+  position: relative;
+}
+.b-cart-order-list-cover{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(199, 198, 198, 0.5);
+  top: 0;
+  left: 0;
 }
 .b-cart-order-head{
   color: #4b1094;
@@ -43,6 +52,26 @@
 }
 .b-step-h3--payment{
   margin-top: 25px;
+}
+.b-step-h3--success{
+  color: #000;
+  font-weight: bold;
+  line-height: 1.2rem;
+  margin-top: 45px;
+}
+.b-step-p{
+  font-size: 1.44rem;
+  line-height: 1.4rem;
+  font-weight: 900;
+}
+.b-step-p--top-pad {
+  padding-top: 30px;
+}
+.b-step-link{
+  padding-top: 25px;
+  font-size: 1.24rem;
+  font-weight: bolder;
+  display: block;
 }
 .b-step-bord{
   height:35px;

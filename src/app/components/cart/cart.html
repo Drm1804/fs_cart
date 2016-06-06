@@ -13,6 +13,7 @@
           <ui-view></ui-view>
         </div>
         <div flex="45" class="b-cart-col b-cart-col--small b-cart-col--grey">
+          <div class="b-cart-order-list-cover" ng-if="ctrl.cover"></div>
           <div layout="row" class="b-cart-head-box">
             <div flex="70"><span class="b-cart-order-head">Order Summary</span></div>
             <div flex="30"><a href="" class="b-cart-edit-order">edit order</a></div>

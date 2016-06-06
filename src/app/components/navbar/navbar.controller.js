@@ -18,12 +18,18 @@
       vm.ordeData = data;
     });
 
+    $rootScope.$on('cart:change-active-state', function(ev, data){
+      if(data === 'success'){
+        vm.ordeData = null;
+      }
+
+    });
+
     // Получаем список покупок в первый раз
     function getOrderList() {
       $cart.returnOrderList()
         .then(function (resp) {
           vm.ordeData = resp;
-          console.log(resp)
         });
     }
 

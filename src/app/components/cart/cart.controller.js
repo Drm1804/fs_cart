@@ -11,6 +11,7 @@
 
     var vm = this;
     vm.orderData = {};
+    vm.cover = false;
     vm.steps =[
       {
         name: 'shipping',
@@ -45,6 +46,14 @@
     vm.run = run;
     vm.run();
 
+    $scope.$on('cart:change-active-state', function(ev, data){
+      console.log(data)
+      if(data === 'success'){
+        vm.cover = true;
+      }
+
+    });
+
 
     // Получаем список покупок
     function getOrderList() {
@@ -64,10 +73,6 @@
         }
       }
     }
-
-    setInterval(function(){
-      vm.getOrderList();
-    }, 500)
 
     function run() {
 

@@ -5,10 +5,17 @@
     .controller('SuccessCartController', SuccessCartController);
 
 
-  SuccessCartController.$inject = [];
+  SuccessCartController.$inject = ['$scope'];
 
-  function SuccessCartController(){
+  function SuccessCartController($scope){
+    var vm = this;
+    vm.thisControllerName = 'success';
+    vm.run = run;
+    run();
 
+    function run(){
+      $scope.$emit('cart:change-active-state', vm.thisControllerName);
+    }
   }
 
 })();
