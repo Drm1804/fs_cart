@@ -16,8 +16,7 @@
       <input class="b-step-text-input" required name="daytimePhone"
              ng-model="ctrl.data.recipient.daytimePhone" placeholder="Daytime phone" type="text"/>
       <span class="b-error-tooltip"
-            ng-show="shippingForm.fullName.$invalid && ctrl.showTooltip">Please enter recipient daytime phone</span>
-
+            ng-show="shippingForm.daytimePhone.$invalid && ctrl.showTooltip">Please enter recipient daytime phone</span>
     </div>
       <span class="b-step-input-describe">
         For delivery <br>question only
@@ -25,35 +24,29 @@
 
     <div class="b-step-bord"></div>
 
-
     <h3 class="b-step-h3">Address</h3>
-    <input class="b-step-text-input" placeholder="Street Address" type="text"/>
-    <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
 
+    <div class="b-step__input">
+      <input class="b-step-text-input" placeholder="Street Address" type="text"/>
+    </div>
+    <div class="b-step__input">
+      <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
+    </div>
     <div class="b-step__input">
       <input class="b-step-text-input" placeholder="City" ng-model="ctrl.data.city" type="text"/>
       <span class="b-cart-select-aim" ng-click="ctrl.getGeoData()"></span>
     </div>
-
-
-
    <div class="b-step__input b-step__input--dt">
      <input class="b-step-text-input" ng-model="ctrl.data.country" placeholder="Country" type="text"/>
-
    </div>
-
     <div class="b-step__input b-step__input--zip">
       <input class="b-step-text-input" placeholder="ZIP" type="text"/>
     </div>
-
 
     <md-button ng-click="ctrl.goToNextStep(shippingForm)" class="md-raised b-step-btn">
       Continue
     </md-button>
 
-
   </form>
-
-
 </div>
 
