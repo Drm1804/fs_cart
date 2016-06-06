@@ -4,28 +4,45 @@
 
   <h3 class="b-step-h3">Recipient</h3>
 
-  <input class="b-step-text-input" placeholder="Full name" type="text"/>
-  <input class="b-step-text-input b-step-text-input--dt" placeholder="Daytime phone" type="text"/>
-  <span class="b-step-input-describe">
-    For delivery <br>question only
-  </span>
-  <div class="b-step-bord"></div>
+  <form name="shippingForm">
+    <span class="b-step__input">
+      <input class="b-step-text-input" required name="fullName" ng-model="ctrl.data.recipient.fullName"
+             placeholder="Full name" type="text"/>
+      <span class="b-error-tooltip"
+            ng-show="shippingForm.fullName.$invalid && ctrl.showTooltip">Please enter recipient full name</span>
+    </span>
+
+    <span class="b-step__input">
+      <input class="b-step-text-input b-step-text-input--dt" required name="daytimePhone" ng-model="ctrl.data.recipient.daytimePhone" placeholder="Daytime phone" type="text"/>
+      <span class="b-error-tooltip"
+            ng-show="shippingForm.fullName.$invalid && ctrl.showTooltip">Please enter recipient daytime phone</span>
+    <span class="b-step-input-describe">
+      For delivery <br>question only
+    </span>
+    </span>
 
 
-  <h3 class="b-step-h3">Address</h3>
-  <input class="b-step-text-input" placeholder="Street Address" type="text"/>
-  <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
+    <div class="b-step-bord"></div>
 
 
-  <input class="b-step-text-input" placeholder="City" type="text"/>
+    <h3 class="b-step-h3">Address</h3>
+    <input class="b-step-text-input" placeholder="Street Address" type="text"/>
+    <input class="b-step-text-input" placeholder="Apt, Suite, Bldg, Gate Code (optional)" type="text"/>
 
 
-  <input class="b-step-text-input b-step-text-input--dt"  placeholder="Country" type="text"/>
-
-  <input class="b-step-text-input b-step-text-input--zip"  placeholder="ZIP" type="text"/>
+    <input class="b-step-text-input" placeholder="City" type="text"/>
 
 
-    <md-button ng-click="ctrl.goToNextStep()" class="md-raised b-step-btn">Continue</md-button>
+    <input class="b-step-text-input b-step-text-input--dt" placeholder="Country" type="text"/>
+
+    <input class="b-step-text-input b-step-text-input--zip" placeholder="ZIP" type="text"/>
+
+
+    <md-button ng-click="ctrl.goToNextStep(shippingForm)" class="md-raised b-step-btn">
+      Continue
+    </md-button>
+
+  </form>
 
 
 </div>

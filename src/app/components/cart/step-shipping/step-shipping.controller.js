@@ -10,6 +10,7 @@
 
 
     var vm = this;
+    vm.showTooltip = false;
     vm.thisControllerName = 'shipping';
 
     // Данные выведены сюда, чтобы проще ориентироваться
@@ -33,11 +34,20 @@
     vm.run = run;
     vm.run();
 
-    function goToNextStep(){
-      $cart.setStepsData(vm.thisControllerName, vm.data)
-      .then(function(){
-        $state.go('auth.cart.billing');
-      })
+    function goToNextStep(form) {
+
+      console.log(form)
+
+      // Проверяем форму на валидность
+      if (form.$valid) {
+        $cart.setStepsData(vm.thisControllerName, vm.data)
+          .then(function () {
+            $state.go('auth.cart.billing');
+          })
+      } else {
+        vm.showTooltip = true;
+      }
+
     }
 
 

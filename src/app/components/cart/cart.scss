@@ -49,12 +49,13 @@
 }
 .b-step-text-input{
   width: 90%;
-  border: 1px solid #dad9d9;
+  border: 1px solid #DFDDDD;
   border-radius: 5px;
   font-size: 1.6rem;
   padding: 13px 5%;
   margin: 9px 0;
 }
+
 .b-step-text-input--dt{
   width: 46%;
 }
@@ -64,6 +65,9 @@
 }
 .b-step-text-input--min{
   width: 67%;
+}
+.b-step-text-input.ng-invalid-required{
+  background: #fffeef;
 }
 .b-step-input-describe{
   font-size: 1.22rem;
@@ -221,4 +225,18 @@
   border-top: 1px solid #e0e1e4;
 
 }
+.b-step__input{
+  position: relative;
+}
 
+.b-error-tooltip{
+  color: #D0011B;
+  position: absolute;
+  top: -55px;
+  left: -10px;
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 15px #e4e3e3;
+  padding: 5px 10px;
+}
