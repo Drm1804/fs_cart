@@ -20,7 +20,6 @@
     vm.data = {
         fullName: null,
         daytimePhone: null,
-
         street: null,
         addressOther: null,
         city: null,
